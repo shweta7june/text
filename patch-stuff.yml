@@ -4,5 +4,5 @@
     - name: Patching Centos Linux
       debug:
         msg: "Patched Centos Linux. Now at: {{ ansible_distribution_version }}"
-     - name: run uname on remote host using raw
-       local_action: raw uname -a
+     #- name: run uname on remote host using raw
+       #local_action: raw uname -a
