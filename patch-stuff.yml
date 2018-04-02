@@ -1,8 +1,6 @@
-- name: Patch OS stuff playbook and uname
+- name: Patch OS stuff playbook
   hosts: all
   tasks:
     - name: Patching Centos Linux
       debug:
-        msg: "Patched Centos Linux. Update at: {{ ansible_distribution_version }}"
-     #- name: run uname on remote host using raw
-       #local_action: raw uname -a
+        msg: "Patched Centos Linux. Now at: {{ ansible_distribution_version }}
