@@ -5,8 +5,11 @@
       debug:
         msg: "Patched Centos Linux. Now at: {{ ansible_distribution_version }}"
      
-     - shell: uname -a
-       ignore_errors: yes
-        
-      register: uname_result
-      - debug: msg="{{ uname_result.stdout }}"
+     - name: run uname on remote host using command
+       command: uname -a
+     - name: run uname on remote host using raw
+       raw: uname -a
+     - name: run uname on remote host using shell
+       shell: uname -a
+      args:
+        executable: "{{ ansible_shell_executable }}"
